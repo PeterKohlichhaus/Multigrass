@@ -1,0 +1,23 @@
+{
+    "dependencies": {
+        "main.js": {
+            "files": [
+                "scripts/main.js",
+                "scripts/slideout-init.js",
+                "scripts/slick-init.js"
+            ],
+
+            "main": true
+        },
+        "main.css": {
+            "files": ["styles/main.scss"],
+            "main": true
+        },
+        "customizer.js": {
+            "files": ["scripts/customizer.js"]
+        }
+    },
+    "config": {
+        "devUrl": "http://localhost"
+    }
+}

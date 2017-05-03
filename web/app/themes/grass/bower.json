@@ -1,0 +1,45 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "slick-carousel": "^1.6.0",
+    "tether": "^1.4.0",
+    "components-font-awesome": "^4.7.0",
+    "bootstrap": "~4",
+    "slideout.js": "^1.0.1",
+    "code-prettify": "*"
+  },
+  "overrides": {
+    "components-font-awesome": {
+      "main": [
+        "./scss/font-awesome.scss",
+        "./fonts/*"
+      ]
+    },
+    "jquery": {
+      "main": [
+        "./dist/jquery.min.js"
+      ]
+    },
+    "slick-carousel": {
+      "main": [
+        "./slick/slick.min.js",
+        "./slick/slick.scss",
+        "./slick/slick-theme.scss",
+        "./slick/ajax-loader.gif",
+        "./slick/fonts/*"
+      ]
+    },
+    "slideout.js": {
+      "main:": [
+        "./dist/slideout.js"
+      ]
+    }
+  }
+}

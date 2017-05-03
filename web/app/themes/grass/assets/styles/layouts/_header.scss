@@ -1,0 +1,21 @@
+.header {
+    background-repeat: no-repeat;
+    padding: 15px 0;
+    color: $header-text-color;
+    &__top {
+        margin-bottom: 60px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    &__logo {
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 110px;
+        padding-top: 31px;
+        display: flex;
+    }
+}
+

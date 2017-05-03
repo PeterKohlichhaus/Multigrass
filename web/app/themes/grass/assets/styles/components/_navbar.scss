@@ -1,0 +1,32 @@
+.navbar {
+    padding: 0;
+    display: flex;
+    margin-left: auto;
+	&__links {
+		float: right;
+		list-style: none;
+        margin: 0;
+	}
+	&__link-wrapper {
+		display: inline-block;
+        margin: 0;
+	}
+	&__link {
+		display: inline-block;
+		font-size: 15px;
+		line-height: 20px;
+		padding: 7px 15px;
+		text-decoration: none;
+		margin: 8px 5px;
+		border-radius: 2px;
+		font-weight: 500;
+		&:link, &:visited {
+			color: $header-text-color;
+			text-decoration: none;
+		}
+		&:hover {
+			color: $link-text-color;
+			background: $link-bg-color;
+		}
+	}
+}

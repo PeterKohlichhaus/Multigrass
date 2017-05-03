@@ -1,0 +1,93 @@
+html {
+    margin: 0 !important;
+}
+
+h1 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 1.2em;
+}
+
+h3 {
+    font-size: 1em;
+}
+
+body {
+    color: $text-color;
+    background: $bg-color;
+    font-family: 'Lato', Sans-serif;
+    font-weight: 300;
+}
+
+.main {
+    padding: 15px 0 !important;
+}
+
+.module {
+    padding: 15px 0;
+}
+
+.heading {
+    margin: 0;
+    text-align: center;
+    height: auto;
+    font-weight: 600;
+    width: 100%;
+    letter-spacing: .025em;
+}
+
+@media (min-width: 576px) {
+    .heading {
+        font-size: 1.6em;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 1.9em;
+    }
+}
+
+.btn-social-icon--grass {
+    background: $apple !important;
+    &:hover {
+        background: darken($apple, 8%) !important;
+    }
+}
+
+/*
+.fixed-header {
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  backface-visibility: hidden;
+  z-index: 2;
+  background-color: red;
+}
+
+.btn-hamburger {
+  position: static;
+  height: 40px;
+  width: 40px;
+}
+
+
+
+
+
+      @media screen and (min-width: 780px) {
+  .slideout-panel {
+    margin-left: 256px;
+  }
+
+  .slideout-menu {
+    display: block;
+  }
+
+  .btn-hamburger {
+    display: none;
+  }
+}*/
