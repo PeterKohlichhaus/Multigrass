@@ -17,11 +17,6 @@ set :deploy_to, -> { "/var/www/html/#{fetch(:application)}" }
 # Use :debug for more verbose output when troubleshooting
 set :log_level, :info
 
-# Apache users with .htaccess files:
-# it needs to be added to linked_files so it persists across deploys:
-# set :linked_files, fetch(:linked_files, []).push('.env', 'web/.htaccess')
-set :linked_files, fetch(:linked_files, []).push('.env')
-set :linked_dirs, fetch(:linked_dirs, []).push('web/app/uploads')
 
 namespace :deploy do
   desc 'Restart application'
@@ -36,18 +31,6 @@ end
 # The above restart task is not run by default
 # Uncomment the following line to run it on deploys if needed
 # after 'deploy:publishing', 'deploy:restart'
-
-namespace :deploy do
-  desc 'Create fish'
-  task :fish do
-    on roles(:app) do
-        #execute "echo 'blaa' >  #{fetch(:deploy_to)}/test.txt"
-        execute :echo, "'blaa' >  #{fetch(:deploy_to)}/works.txt"
-    end
-  end
-end
-after 'deploy:publishing', 'deploy:fish'
-
 
 namespace :deploy do
   desc 'Update WordPress template root paths to point to the new release'
@@ -74,3 +57,18 @@ end
 # Note that you need to have WP-CLI installed on your server
 # Uncomment the following line to run it on deploys if needed
 after 'deploy:publishing', 'deploy:update_option_paths'
+
+set :npm_target_path, -> { release_path.join('web/app/themes/grass/') } # default not set
+set :npm_flags, %w(--silent --no-progress)
+
+#set :bower_bin, '/home/ubuntu/.nvm/versions/node/v7.9.0/lib/node_modules/bower/bin/bower'
+set :bower_target_path, -> { release_path.join('web/app/themes/grass/') }
+
+set :gulp_tasks, '--production'
+set :gulp_file, -> { release_path.join('web/app/themes/grass/gulpfile.js') }
+set :gulp_target_path, -> { release_path.join('web/app/themes/grass/') }
+
+namespace :deploy do
+#set :composer_working_dir, -> { release_path.join('web/app/themes/grass/') }
+  before :updated, 'gulp'
+end

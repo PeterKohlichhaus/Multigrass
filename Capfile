@@ -4,9 +4,26 @@ require 'capistrano/setup'
 # Includes default deployment tasks
 require 'capistrano/deploy'
 
-# Load tasks from gems
+# Includes tasks from other gems included in your Gemfile
+#
+# For documentation on these, see for example:
+#
+#   https://github.com/capistrano/rvm
+#   https://github.com/capistrano/rbenv
+#   https://github.com/capistrano/chruby
+#   https://github.com/capistrano/bundler
+#   https://github.com/capistrano/rails
+#
 require 'capistrano/composer'
+require 'capistrano/npm'
+require 'capistrano/bower'
+require 'capistrano/gulp'
+#require 'capistrano/rvm'
+#require 'capistrano/bundler'
+#require 'capistrano/rails/assets'
+
+#require 'capistrano/nvm'
+
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
-# Customize this path to change the location of your custom tasks.
-Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
+Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
